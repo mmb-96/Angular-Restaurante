@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../servicio/login.service';
+import { RegistroService } from '../../servicio/registro.service';
 import { Router } from '@angular/router';
 import { Validators, FormBuilder } from '@angular/forms';
 
@@ -13,14 +13,15 @@ export class RegistroComponent implements OnInit {
   // Variable que se utiliza en caso de error.
   private error = 'Correo electrónico registrado, contraseña no válida o falta rellenar algun campo.';
 
-  constructor(private  authService: LoginService, private router: Router, private fb: FormBuilder) { }
+  constructor(private  authService: RegistroService, private router: Router, private fb: FormBuilder) { }
 
   loginForm = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
+    nameV: ['', Validators.required],
     local: ['', Validators.required],
     codpos: ['', Validators.required],
-    Direccion: ['', Validators.required]
+    direccion: ['', Validators.required]
   });
 
   ngOnInit() {
@@ -30,7 +31,12 @@ export class RegistroComponent implements OnInit {
   // en caso contrario se muestra un error.
   onSubmitRegister() {
 
-    this.authService.register(this.loginForm.value.email, this.loginForm.value.password).then(auth => this.router.navigate(['/login']))
+    this.authService.register(this.loginForm.value.email,
+      this.loginForm.value.password,
+      this.loginForm.value.nameV,
+      this.loginForm.value.local,
+      this.loginForm.value.codpos,
+      this.loginForm.value.direccion).then(auth => this.router.navigate(['/login']))
     .catch(err => alert(this.error));
   }
 

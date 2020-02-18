@@ -1,21 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Comida Domicilio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['inicio']">Inicio</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['producto']">Producto</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['login']">Login</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['registro']">Registro</a></li>
+      <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['carrito']">Carrito</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
 
 <router-outlet></router-outlet>
+
+<br>
+<br>
+<footer class="font-small bg-dark pt-4">
+  <div class="container text-center text-md-left text-white">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase">Pedida de comida:</h5>
+        <p>¿Quieres hacerme algun pedido? ¿Pasabas por aquí y te apetece saludar? ¡Pues no te cortes! ¡Mándame un correo y te responderé a la velocidad del rayo!</p>
+        <p>ComidaDomicilio@ComidaDomicilio.com - 666666666</p>
+      </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-3 mb-md-0 mb-3">
+          <h5 class="text-uppercase">Enlaces:</h5>
+          <ul class="list-unstyled">
+            <li><a [routerLink]="['inicio']">Inicio</a></li>
+            <li><a [routerLink]="['producto']">Producto</a></li>
+            <li><a [routerLink]="['login']">Login</a></li>
+            <li><a [routerLink]="['registro']">Registro</a></li>
+            <li><a [routerLink]="['carrito']">Carrito</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright. ComidaDomicilio.com</div>
+</footer>

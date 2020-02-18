@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -41,15 +40,6 @@ export class LoginService {
   get isLoggedIn(): boolean {
     const  user  =  JSON.parse(localStorage.getItem('user'));
     return  user  !==  null;
-  }
-
-  async register(email: string, password: string) {
-    const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-    this.sendEmailVerification();
-  }
-
-  async sendEmailVerification() {
-    await this.afAuth.auth.currentUser.sendEmailVerification();
   }
 
   async sendPasswordResetEmail(passwordResetEmail: string) {

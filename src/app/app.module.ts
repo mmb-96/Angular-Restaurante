@@ -11,6 +11,8 @@ import { LoginRegistroModule } from './login-registro/login-registro.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PrincipalComponent } from './principal/principal.component';
+import { ProductoComponent } from './producto/producto.component';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBCmPYLIt2ZBZ6bfrBx3O-bCHgEV02OGiA',
@@ -25,7 +27,9 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PrincipalComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
