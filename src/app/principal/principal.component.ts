@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../servicio/productos.service';
 
 @Component({
   selector: 'app-principal',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  public variadoGet: any = [];
+
+  constructor(private ProductosService: ProductosService) { }
 
   ngOnInit() {
+    this.ProductosService.getVariado().subscribe(res => this.variadoGet = res);
   }
 
 }
