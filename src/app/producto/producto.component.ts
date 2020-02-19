@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../servicio/productos.service';
 
 @Component({
   selector: 'app-producto',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor() { }
+  public bebidasGet: any = [];
+
+  constructor( private ProductosService: ProductosService, ) { }
 
   ngOnInit() {
+    this.ProductosService.getBebidas().subscribe(chats => this.bebidasGet = chats);
+    this.ProductosService.getBebidas().subscribe(chats => this.chatRooms = chats);
+    this.ProductosService.getBebidas().subscribe(chats => this.chatRooms = chats);
+    this.ProductosService.getBebidas().subscribe(chats => this.chatRooms = chats);
+    this.ProductosService.getBebidas().subscribe(chats => this.chatRooms = chats);
   }
 
 }

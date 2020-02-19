@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -8,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class RegistroService {
 
-  constructor(public  afAuth: AngularFireAuth, public  router: Router, private db: AngularFirestore) { }
+  constructor(public  afAuth: AngularFireAuth, private db: AngularFirestore) { }
 
   /*
   Metodo para registrar se en la aplicación. sus parametros usutilizados son email, contraseña, nombre, localidad, codigo postal y direcion.

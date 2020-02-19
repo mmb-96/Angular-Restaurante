@@ -1,1 +1,95 @@
-<p>producto works!</p>
+<h2 class="text-center">Bebidas:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let bebida of bebidasGet" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ bebida.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ bebida.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ bebida.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="bebida.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
+<br>
+<h2 class="text-center">Combinados:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let combi of chatRooms" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ combi.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ combi.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ combi.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="combi.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
+<br>
+<h2 class="text-center">Dürüm:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let durum of chatRooms" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ durum.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ durum.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ durum.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="durum.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
+<br>
+<h2 class="text-center">Pita:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let product of chatRooms" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ product.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ product.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ product.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="product.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
+<br>
+<h2 class="text-center">Ensaladas:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let product of chatRooms" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ product.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ product.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ product.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="product.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
+<br>
+<h2 class="text-center">Pizza:</h2>
+<br>
+<div class="row">
+    <div *ngFor="let product of chatRooms" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <h3>{{ product.payload.doc.data().Nombre }}</h3>
+        <ul>
+            <li>Capacidad: {{ product.payload.doc.data().Capacidad }} L</li>
+            <li>Precio: {{ product.payload.doc.data().Precio }} €</li>
+        </ul>
+        <div class="col text-center">
+            <img [src]="product.payload.doc.data().IMG" class="grande">
+            <button (click)="share()" class="btn btn-success">Añadir</button>
+        </div>
+    </div>
+</div>
