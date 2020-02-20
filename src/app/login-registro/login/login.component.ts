@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   */
   public onSubmitLogin() {
     this.authService.login( this.loginForm.value.email, this.loginForm.value.password )
-    .then(res => this.router.navigate(['registro'])).catch(err => alert(this.error));
+    .then(res => this.router.navigate([''])).catch(err => alert(this.error));
   }
 
 }

@@ -1,0 +1,15 @@
+<div class="example-container">
+    <span class="center">Restablecer contraseña.</span>
+   
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="title">Email: </label>
+        <input type="email" class="form-control" id="username" name="email" formControlName="email" autofocus><br>
+        <span style="color:Red;" *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].errors?.required">Email obligatorio</span>
+      </div>
+     
+      <div class="buttons-container center">
+        <button class="btn btn-primary" type="submit" (click)="enviarPass()">Entrar</button>
+      </div>
+    </form>
+  </div>

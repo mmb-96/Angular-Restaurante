@@ -4,15 +4,18 @@ import { LoginComponent } from './login-registro/login/login.component';
 import { RegistroComponent } from './login-registro/registro/registro.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { ProductoComponent } from './producto/producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { SeguridadService } from './servicio/seguridad.service';
+import { ReserPassComponent } from './reser-pass/reser-pass.component';
 
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
-  { path: 'inicio', component: PrincipalComponent},
-  { path: 'producto', component: ProductoComponent},
+  { path: 'producto', component: ProductoComponent, canActivate: [SeguridadService]},
   { path: 'login', component: LoginComponent},
+  { path: 'restPass', component: ReserPassComponent},
   { path: 'registro', component: RegistroComponent},
-  { path: 'carrito', component: RegistroComponent}
+  { path: 'carrito', component: CarritoComponent, canActivate: [SeguridadService]}
 ];
 
 @NgModule({

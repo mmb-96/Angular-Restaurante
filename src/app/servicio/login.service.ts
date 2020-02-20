@@ -24,8 +24,10 @@ export class LoginService {
   /*
   Metodo que se utiliza para hacer el login de la aplicación.
   */
-  async login(email: string, password: string): Promise<any> {
-    await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+  login(email: string, password: string): Promise<any> {
+    return new Promise((resolve, rejected) => {
+      this.afAuth.auth.signInWithEmailAndPassword(email, password).then(user => resolve(user)).catch(err => rejected(err));
+    });
   }
 
   /*
@@ -37,11 +39,9 @@ export class LoginService {
     this.router.navigate(['registro']);
   }
 
-  get isLoggedIn(): boolean {
-    const  user  =  JSON.parse(localStorage.getItem('user'));
-    return  user  !==  null;
-  }
-
+  /*
+  Metodo que se utiliza para restablecer la contrasea del usuario.
+  */
   async sendPasswordResetEmail(passwordResetEmail: string) {
     return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
   }
