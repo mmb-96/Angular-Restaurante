@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class ReserPassComponent implements OnInit {
 
-    // Variable que se utiliza en caso de error.
-    private error = 'Los datos no son correctos.';
+  // Variable que se utiliza en caso de error.
+   private error = 'Los datos no son correctos.';
 
+  // Comprobar validaciones.
   loginForm = this.fb.group({
     email: ['', Validators.required],
   });
@@ -22,6 +23,9 @@ export class ReserPassComponent implements OnInit {
   ngOnInit() {
   }
 
+  /*
+  Metodo que llama al servicio para restablecer el correo, es necesario el correo.
+  */
   enviarPass() {
     this.authService.sendPasswordResetEmail(this.loginForm.value.email)
     .then(res => this.router.navigate(['login'])).catch(err => alert(this.error));

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router'
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { isNullOrUndefined } from 'util';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
@@ -12,8 +12,8 @@ export class SeguridadService implements CanActivate {
 
   constructor(private AFAuth: AngularFireAuth, private router: Router) { }
 
-    /*
-    Este metodo revisa si el usuario esta conectado o no.
+  /*
+  Este metodo revisa si el usuario esta conectado o no.
   */
  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
   return this.AFAuth.authState.pipe(map(auth => {

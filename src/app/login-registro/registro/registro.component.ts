@@ -15,6 +15,7 @@ export class RegistroComponent implements OnInit {
 
   constructor(private  authService: RegistroService, private router: Router, private fb: FormBuilder) { }
 
+  // Comprobar validaciones.
   loginForm = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
@@ -27,7 +28,7 @@ export class RegistroComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Metodo que se utiliza para registrar el usuario en la base de datos, si funciona se envia a la pagina principal,
+  // Metodo que se utiliza para registrar el usuario en la base de datos, si funciona se envia a la pagina de logeo,
   // en caso contrario se muestra un error.
   onSubmitRegister() {
 

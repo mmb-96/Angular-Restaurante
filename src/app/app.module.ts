@@ -15,7 +15,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 // Componentes de la aplicacion.
 import { PrincipalComponent } from './principal/principal.component';
 import { ProductoComponent } from './producto/producto.component';
-import { CarritoComponent } from './carrito/carrito.component';
 import { ReserPassComponent } from './reser-pass/reser-pass.component';
 
 const firebaseConfig = {
@@ -34,7 +33,6 @@ const firebaseConfig = {
     AppComponent,
     PrincipalComponent,
     ProductoComponent,
-    CarritoComponent,
     ReserPassComponent
   ],
   imports: [

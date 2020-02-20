@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private  authService: LoginService, private router: Router, private fb: FormBuilder) {  }
 
+  // Comprobar validaciones.
   loginForm = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required]
